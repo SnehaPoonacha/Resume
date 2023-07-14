@@ -586,8 +586,10 @@ h1{
     }
 }
 @media (max-width:320px) {
+    header{
+        height:90vh
     .home-right{
-        height: 30vh;
+        height: 50%;
     }
 }
 
