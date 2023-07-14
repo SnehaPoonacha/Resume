@@ -2,11 +2,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    outline: none;
-    border: none;
     text-decoration: none;
     list-style: none;
-    letter-spacing: .4px;
+    outline: none;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     scroll-behavior: smooth;
 }
@@ -30,14 +28,10 @@ img{
     --color-bg2: #9b7d9f;
     
 }
-html{
-    overflow-x:hidden ;
-}
-
 body{
+    width: 100%;
     background-color: var(--color-bg2);
     color: var(--color-primary);
-    width: 100%;
 }
 
 h1{
@@ -60,10 +54,6 @@ p{
     line-height: 120%;
 
 }
-section{
-    min-width: 100vh;
-    padding: 6rem 0;
-}
 .btn{
     padding: 1rem 2.4rem;
     display: inline-block;
@@ -75,24 +65,24 @@ section{
     border-radius: 6px;
     width: fit-content;
     cursor: pointer;
+    transition: var(--transition);
 }
 .btn:hover{
     background: var(--color-white);
     color: var(--color-primary);
-    transition: var(--transition)
 }
-.btn-primary{
-    background: var(--color-primary);
+section{
+    padding-top: 6rem ;
 }
-
 .container{
-    max-width: 1620px;
     width: 90%;
     margin: 0 auto;
+    max-width: 1620px;
 }
+
+
 header{  
   height: 100vh;
-  display: flex;
   width: 100%;
 } 
 /* ...................Start NavBar.................... */
@@ -109,7 +99,7 @@ nav{
 .navScroll{
     z-index: 10;
     background: var(--color-bg2);
-    box-shadow: 0  0 1rem 0  rgba(0, 0, 0, 0.4) ;
+    box-shadow: 0  0 .2rem 0  rgba(0, 0, 0, 0.4) ;
 }
 .nav-container{
     height: 100%;
@@ -121,7 +111,7 @@ nav{
 .nav-links{
     display: flex;
     align-items: center;
-    gap: 4rem;
+    gap: 2.5rem;
 }
 .nav-links li a{
     color: var(--color-white);
@@ -158,11 +148,12 @@ nav{
 #Home{
     height: 100%;
     width: 100%; 
+    padding: 0;
     background: var(--color-bg1);
 }
 .home-container{
     display: grid;
-    grid-template-columns: 50% 35%;
+    grid-template-columns: 56% 40%;
     gap: 4%;
     height: 100%;
     align-items: center;
@@ -182,13 +173,13 @@ h1{
     width: 100%;
 }
 .home-right img{
+    width: 70%;
     background: aliceblue;
     border-radius: 50%;
 }
 
 /*Project*/
 #Projects{
-    padding-top: 5rem;
     padding-bottom:4rem ;
     background: var(--color-bg2);
 }
@@ -200,7 +191,7 @@ h1{
 .projects{
     display:grid;
     grid-template-columns: repeat(2,1fr);
-    gap:50px;
+    gap:20px;
     padding-left: 10%;
     padding-right: 10%;
     margin-top: 30px;
@@ -373,6 +364,8 @@ h1{
 #Contact{
     background: var(--color-black);
     padding: 70px 0;
+    justify-content: center;
+    align-items: center;
 }
 .contact-container{
     display: flex;
@@ -395,7 +388,6 @@ h1{
 }
 .contact-social li a{
     color: var(--color-primary-variant);
-    
     font-size: 25px;
     cursor:pointer;
     transition: var(--transition);
@@ -408,10 +400,10 @@ h1{
 }
 
 .footer{
-    display: flex;
+    /*display: flex;
     flex-wrap: wrap;
+     justify-content: center;*/
     background: var(--color-bg2);
-    justify-content: center;
     align-items: center;
     padding: 2rem 9%;
 }
@@ -419,7 +411,12 @@ h1{
     font-size: 14px;
     text-align: center;
 }
-@media(max-width:990px){
+@media(max-width:991px){
+    html,body{
+        width: fit-content;
+        padding: 0;
+        margin: 0;
+    }
     .nav-container{
         position: relative;
     }
@@ -489,25 +486,28 @@ h1{
     .close{
         display: none;
     }
+    header{
+        height: 90vh;
+    }
     .home-container{
         grid-template-columns: 1fr;
-        gap: 0;
+        gap: 2%;
     }
     .home-right{
         grid-row: 1;
-        margin-top: 2rem;
-        height: 43vh;
+        margin-top: 5rem;
+        height: 42vh;
     }
     .home-right img{
         background: aliceblue;
-        width: 30%;
+        width: 60%;
         margin: 0 auto;
     }
     .home-left{
         text-align: center;
     }
     .project-container{
-        grid-template-columns: 1fr;
+        grid-template-columns: (2,1fr);
     }
     .skills-box{
         padding: .2rem;
@@ -516,42 +516,19 @@ h1{
         padding: 0 5rem ;
     }
 }
-@media (max-width:768px){
-    header{
-        height: 100vh;
-    }
-    .home-container{
-        gap: 0;
-    }
-    .home-container p{
-        line-height: 140%;
-        margin-bottom: 1rem;
-        margin-top: .8rem;
-    }
-    .home-right{
-        margin-top: .2rem;
-    }
-    .home-right img{
-        width: 40%;
-    }
-    .skills-container .heading{
-        margin-bottom: 1rem
-        
-    }
-    .skills-box{
-        padding: .2rem;
-    }
-    .skills-box .skills-content{
-        padding: 0 5rem ;
-    }
-}
-
 @media (max-width:600px) {
+    html,body{
+        width: fit-content;
+        height: fit-content;
+        padding: 0%;
+        margin: 0;
+    }
+    
     h1{
-        font-size: 42px;
+        font-size: 46px;
     }
     h2{
-        font-size: 30px;
+        font-size: 34px;
     }
     h3{
         font-size: 28px;
@@ -561,12 +538,11 @@ h1{
         
     }
     header{
-        height: 95vh;
+        height:100vh ;
     }
-    #Home{
-        padding-bottom: 2rem;
-    }
+   
     .home-container{
+        width: 70%;
         gap: 0;
     }
     .home-container p{
@@ -578,7 +554,7 @@ h1{
         height: 35vh;
     }
     .home-right img{
-        height: 25%;
+        width: 70%;
     }
     
     .btn{
@@ -589,6 +565,8 @@ h1{
     #Projects{
         padding-top: 2rem;
         padding-bottom: 2rem;
+        justify-content: center;
+        align-items: center;
     }
     .project-container h2{
         margin-bottom: 2rem;
@@ -601,57 +579,13 @@ h1{
         padding: 5rem 4% 2rem 5%;
     }
     .skills-box{
-        padding: .2rem;
+        padding: .5rem;
     }
     .skills-box .skills-content{
         padding: 2rem;
     }
 }
 
-@media (max-width:425px){
-    header{
-        height: 90vh;
-    }
-    h1{
-        font-size: 38px;
-    }
-    h3{
-        font-size: 25px;
-    }
-    #Home{
-        padding-top: 4rem;
-    }
-    .home-container{
-        gap: 0;
-    }
-    .home-right {
-        height: 40vh;
-    }
-    .home-container p{
-        line-height: 140%;
-        margin-bottom: 1rem;
-        margin-top: .4rem;
-    }
-    .skills-box .skills-content{
-        padding: 0 .3rem ;
-    }
-    .projects{
-        padding-left: 15%;
-    }
     
-}
-@media (max-width:375px){
-    h1{
-        font-size: 32px;
-    }
-    #Home{
-        padding-top: 4rem;
-    }
-    .home-container p{
-        line-height: 120%;
-        margin-bottom: 1rem;
-        margin-top: .4rem;
-    }
-   
-}
+
 
