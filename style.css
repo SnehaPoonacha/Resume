@@ -29,7 +29,7 @@ img{
     
 }
 body{
-    width: 100%;
+    overflow-x: hidden;
     background-color: var(--color-bg2);
     color: var(--color-primary);
 }
@@ -78,13 +78,20 @@ section{
     width: 90%;
     margin: 0 auto;
     max-width: 1620px;
+    
 }
-
-
 header{  
   height: 100vh;
   width: 100%;
 } 
+.heading{
+    font-size: 40px;
+    line-height: 160%;
+    font-weight: 700;
+    color: var(--color-primary);
+    text-align: center;
+    padding-bottom: 2rem;
+}
 /* ...................Start NavBar.................... */
 
 nav{
@@ -180,13 +187,17 @@ h1{
 
 /*Project*/
 #Projects{
+    padding-top: 3rem;
     padding-bottom:4rem ;
     background: var(--color-bg2);
 }
-.project-container h2{
-    text-align: center;
+.heading{
+    font-size: 40px;
+    line-height: 160%;
+    font-weight: 700;
     color: var(--color-primary);
-    margin-bottom: 4rem;
+    text-align: center;
+    padding-bottom: .1rem;
 }
 .projects{
     display:grid;
@@ -221,38 +232,26 @@ h1{
     top: 0;
 }
 .education{
-    display:flex;
     justify-content: center;
-    flex-direction: column;
     background: var(--color-bg1);
     min-height: auto;
     padding: 30px;
 }
 .education .education-row{
+    padding-top: 1.5rem;
     padding-left: 30px;
     padding-right: 30px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5rem;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 3rem;
 }
-.education-row .education-column{
-    flex:1 1 40rem
-}
-.education .heading{
-    font-size: 40px;
-    line-height: 160%;
-    font-weight: 700;
-    color: var(--color-primary);
-    text-align: center;
-    padding-bottom: 2rem;
-}
+
 .education-container .education-column{
-    padding: 30px;
-    flex: 1 1 40rem;
+    padding: 10px;
 }
 .education-column .title{
     font-size: 30px;
-    margin: 0 0 1.5rem 2rem;
+    margin: 0 0 1.2rem 2rem;
 }
 
 .education-column .education-box{
@@ -264,19 +263,22 @@ h1{
 }
 .education-content .content{
     position: relative;
-    padding: 1rem;
+    padding: .5rem;
     border: .2rem solid var(--color-black);
     border-radius: .6rem;
     margin-bottom: 2rem;
 }
 .education-column h2{
     color: var(--color-bg2);
+    padding-top: .1rem;
     font-size: 20px;
     margin-left: 1rem;
     padding-left: .1rem;
 }
 .education-column p{
+    justify-content: center;
     font-size: 20px;
+    padding-top: .2rem;
     padding-left: .1rem;
     padding-bottom: .1rem;
     margin-left: 1rem;
@@ -298,13 +300,6 @@ h1{
     padding-bottom: 50px;
     padding-top: 50px;
     background: var(--color-bg2);
-}
-.skills .heading{
-    text-align: center;
-    font-size: 40px;
-    line-height: 160%;
-    font-weight: 700;
-    color: var(--color-primary);
 }
 .skills .skills-row{
     display: flex;
@@ -400,6 +395,9 @@ h1{
 }
 
 .footer{
+    /*display: flex;
+    flex-wrap: wrap;
+     justify-content: center;*/
     background: var(--color-bg2);
     align-items: center;
     padding: 2rem 9%;
@@ -411,6 +409,7 @@ h1{
 @media(max-width:991px){
     html,body{
         width: fit-content;
+        height: fit-content;
         padding: 0;
         margin: 0;
     }
@@ -503,6 +502,9 @@ h1{
     .home-left{
         text-align: center;
     }
+    .education .education-row{
+        grid-template-columns:1fr;
+    }
     .project-container{
         grid-template-columns: (2,1fr);
     }
@@ -513,19 +515,14 @@ h1{
         padding: 0 5rem ;
     }
 }
-@media (max-width:600px) {
-    html,body{
-        width: fit-content;
-        height: fit-content;
-        padding: 0%;
-        margin: 0;
-    }
-    
-    h1{
-        font-size: 46px;
+@media (max-width:768px){
+    header{
+        height: 100vh;
+    } h1{
+        font-size: 40px;
     }
     h2{
-        font-size: 34px;
+        font-size: 36px;
     }
     h3{
         font-size: 28px;
@@ -534,24 +531,44 @@ h1{
         font-size: 16px;
         
     }
-    header{
-        height:100vh ;
-    }
-   
-    .home-container{
-        width: 70%;
-        gap: 0;
-    }
     .home-container p{
         line-height: 140%;
         margin-bottom: 1rem;
         margin-top: .6rem;
     }
     .home-right{
-        height: 40vh;
+        height: 45vh;
     }
     .home-right img{
-        width:70%
+        width: 50%;
+    }
+}
+@media (max-width:600px) {
+    h1{
+        font-size: 42px;
+    }
+    h2{
+        font-size: 38px;
+    }
+    h3{
+        font-size: 28px;
+    }
+    p{
+        font-size: 16px;
+        
+    }
+    .home-container{
+        gap: 0;
+    }
+    
+    .home-right{
+        margin-top: 4rem;
+    }
+   
+    .home-right img{
+        width: 80%;
+    }
+    
     .btn{
         padding: .8rem 2.2rem;
         font-size: 14px;
@@ -580,7 +597,52 @@ h1{
         padding: 2rem;
     }
 }
+@media (max-width:425px){
+    html,body{
+        height: -webkit-fill-available;
+        width: -webkit-fill-available;
+        margin: 0;
+        padding: 0;
+    }
+    h1{
+        font-size: 36px;
+    }
+    h2{
+        font-size: 28px;
+    }
+    h3{
+        font-size: 24px;
+    }
+    p{
+        font-size: 12px;
+    }
+    header{
+        height:90vh ;
+    }
+    
+    .home-container p{
+        line-height: 110%;
+        margin-bottom: 1rem;
+        margin-top: .6rem;
+    }
+    .home-right{
+        height: 32vh;
+    }
+    .btn{
+        padding: .6rem 2rem;
+        font-size: 12px;
+    }
+    .skills-content .progress h2{
+        font-size: 20px;
+        font-weight: 800;
+    }
+    .heading{
+        font-size: 30px;
+        line-height: 160%;
+        font-weight: 700;
+    }
 
+}
 
     
 
