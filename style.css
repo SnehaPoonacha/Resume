@@ -400,9 +400,6 @@ h1{
 }
 
 .footer{
-    /*display: flex;
-    flex-wrap: wrap;
-     justify-content: center;*/
     background: var(--color-bg2);
     align-items: center;
     padding: 2rem 9%;
@@ -551,10 +548,10 @@ h1{
         margin-top: .6rem;
     }
     .home-right{
-        height: 35vh;
+        height: 40vh;
     }
     .home-right img{
-        width: 70%;
+        width: 50%;
     }
     
     .btn{
