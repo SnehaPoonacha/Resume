@@ -550,6 +550,8 @@ h1{
     .home-right{
         height: 40vh;
     }
+    .home-right img{
+        width:70%
     .btn{
         padding: .8rem 2.2rem;
         font-size: 14px;
