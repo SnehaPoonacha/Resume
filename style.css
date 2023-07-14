@@ -585,15 +585,11 @@ h1{
         padding: 2rem;
     }
 }
-@media (max-width:350px) {
+@media (max-width:425px) {
    header{
     height: 90vh;
    }
   
-.home-right{
-    height: 50vh;
-}
-
 
     
 
