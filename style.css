@@ -585,11 +585,7 @@ h1{
         padding: 2rem;
     }
 }
-@media (max-width:425px) {
-   header{
-    height: 90vh;
-   }
-  
+
 
     
 
